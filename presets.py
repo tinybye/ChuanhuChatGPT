@@ -1,10 +1,8 @@
 # -*- coding:utf-8 -*-
-title = """<h1 align="left" style="min-width:200px; margin-top:0;">川虎ChatGPT 🚀</h1>"""
+title = """<h1 align="left" style="min-width:200px; margin-top:0;">用爱发电的ChatGPT，轻轻体验啦</h1>"""
 description = """<div align="center" style="margin:16px 0">
 
-由Bilibili [土川虎虎虎](https://space.bilibili.com/29125536) 和 [明昭MZhao](https://space.bilibili.com/24807452)开发
-
-访问川虎ChatGPT的 [GitHub项目](https://github.com/GaiZhenbiao/ChuanhuChatGPT) 下载最新版脚本
+本站基于B站川虎大佬的 [GitHub项目](https://github.com/GaiZhenbiao/ChuanhuChatGPT) 改造
 
 此App使用 `gpt-3.5-turbo` 大语言模型
 </div>
@@ -64,12 +62,7 @@ pre code {
 
 summarize_prompt = "你是谁？我们刚才聊了什么？"  # 总结对话时的 prompt
 MODELS = [
-    "gpt-3.5-turbo",
-    "gpt-3.5-turbo-0301",
-    "gpt-4",
-    "gpt-4-0314",
-    "gpt-4-32k",
-    "gpt-4-32k-0314",
+    "gpt-3.5-turbo"
 ]  # 可选的模型
 websearch_prompt = """Web search results:
 
@@ -89,9 +82,9 @@ proxy_error_prompt = "代理错误，无法获取对话。"  # 代理错误
 ssl_error_prompt = "SSL错误，无法获取对话。"  # SSL 错误
 no_apikey_msg = "API key长度不是51位，请检查是否输入正确。"  # API key 长度不足 51 位
 
-max_token_streaming = 3500  # 流式对话时的最大 token 数
+max_token_streaming = 1000  # 流式对话时的最大 token 数
 timeout_streaming = 30  # 流式对话时的超时时间
-max_token_all = 3500  # 非流式对话时的最大 token 数
+max_token_all = 1000  # 非流式对话时的最大 token 数
 timeout_all = 200  # 非流式对话时的超时时间
 enable_streaming_option = True  # 是否启用选择选择是否实时显示回答的勾选框
 HIDE_MY_KEY = False  # 如果你想在UI中隐藏你的 API 密钥，将此值设置为 True

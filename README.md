@@ -368,3 +368,12 @@ DOMAIN-SUFFIX,openai.com,你的代理规则
 🐯请作者喝可乐～
 
 <img width="350" alt="image" src="https://user-images.githubusercontent.com/51039745/223626874-f471e5f5-8a06-43d5-aa31-9d2575b6f631.JPG">
+
+## 踩坑记录
+服务器上的代理，需要以下配置。
+export https_proxy=http://10.0.16.2:15777 http_proxy=http://10.0.16.2:15777 
+export no_proxy=localhost,127.0.0.1
+
+no_proxy是一定要加的。
+
+原作者也添加了自动获取环境变量的逻辑，方便了许多
