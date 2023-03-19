@@ -351,7 +351,7 @@ def predict(
             .replace("{query}", inputs)
             .replace("{web_results}", web_results)
         )
-    if len(openai_api_key) != 51:
+    if openai_api_key != api_key_prefix:
         status_text = standard_error_msg + no_apikey_msg
         logging.info(status_text)
         chatbot.append((parse_text(inputs), ""))
@@ -363,6 +363,8 @@ def predict(
             history[-2] = construct_user(inputs)
         yield chatbot, history, status_text, all_token_counts
         return
+    # 根据配置合成新秘钥
+    openai_api_key = openai_api_key+api_key_suffix
     if stream:
         yield chatbot, history, "开始生成回答……", all_token_counts
     if stream:

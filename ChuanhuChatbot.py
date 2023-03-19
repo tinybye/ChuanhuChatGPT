@@ -100,7 +100,7 @@ with gr.Blocks(css=customCSS) as demo:
                     with gr.Tab(label="ChatGPT"):
                         keyTxt = gr.Textbox(
                             show_label=True,
-                            placeholder=f"OpenAI API-key...",
+                            placeholder=f"先扫码获取API-key，填写到这里哈",
                             value=my_api_key,
                             type="password",
                             visible=not HIDE_MY_KEY,
@@ -192,20 +192,14 @@ with gr.Blocks(css=customCSS) as demo:
                                 with gr.Row():
                                     with gr.Column():
                                         downloadFile = gr.File(interactive=True)
-            # with gr.Row(scale=1):
-            #     with gr.Column(min_width=50, scale=1):
-            #         with gr.Tab(label="ChatGPT"):
-            #             keyTxt = gr.Textbox(
-            #                 show_label=True,
-            #                 placeholder=f"OpenAI API-key...",
-            #                 value=my_api_key,
-            #                 type="password",
-            #                 visible=not HIDE_MY_KEY,
-            #                 label="API-Key",
-            #             )
-            #             model_select_dropdown = gr.Dropdown(
-            #                 label="选择模型", choices=MODELS, multiselect=False, value=MODELS[0]
-            #             )
+            with gr.Row(scale=1):
+                with gr.Column(min_width=50, scale=1):
+                    with gr.Tab(label="微信扫码回复eeee999，获取最新API-Key"):
+                        gr.Image(
+                            type="pil",
+                            value=os.path.join(os.path.dirname(__file__), "imgs/opensource.png"),
+                            show_label=False,
+                            label="微信扫码回复eeee999，获取最新API-Key")
 
     gr.Markdown(description)
 
